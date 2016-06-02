@@ -24,7 +24,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - UITableView DataSourse
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -59,7 +58,7 @@
                                       mode:CBProgressHUDModeText
                                       text:@"这句话没有什么意思"
                                   animated:YES] hideAnimated:YES
-             afterDelay:1.5f];
+             afterDelay:5.5f];
             
         }
             break;
@@ -68,7 +67,7 @@
                                       mode:CBProgressHUDModeIndeterminate
                                       text:nil
                                   animated:YES] hideAnimated:YES
-             afterDelay:1.5f];
+             afterDelay:5.5f];
         }
             break;
         case 2: {
@@ -76,7 +75,7 @@
                                       mode:CBProgressHUDModeIndeterminate
                                       text:@"ˊ_>ˋ呵呵哒"
                                   animated:YES] hideAnimated:YES
-             afterDelay:1.5f];
+             afterDelay:5.5f];
         }
             break;
         case 3: {
@@ -85,7 +84,14 @@
                                       text:nil
                                   animated:YES];
             dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-                [self imitateProgress:progressHUD];
+                float progress = 0.0f;
+                while (progress < 1.0f) {
+                    progress += 0.01f;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        progressHUD.progress = progress;
+                    });
+                    usleep(50000);
+                }
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [progressHUD hideAnimated:YES];
                 });
@@ -98,7 +104,14 @@
                                       text:@"正在下载中..."
                                   animated:YES];
             dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0), ^{
-                [self imitateProgress:progressHUD];
+                float progress = 0.0f;
+                while (progress < 1.0f) {
+                    progress += 0.01f;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        progressHUD.progress = progress;
+                    });
+                    usleep(50000);
+                }
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [progressHUD hideAnimated:YES];
                 });
@@ -107,18 +120,6 @@
             break;
         default:
             break;
-    }
-
-}
-
-- (void)imitateProgress:(CBProgressHUD *)progressHUD {
-    float progress = 0.0f;
-    while (progress < 1.0f) {
-        progress += 0.01f;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            progressHUD.progress = progress;
-        });
-        usleep(50000);
     }
 }
 
