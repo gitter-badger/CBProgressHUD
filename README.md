@@ -1,5 +1,7 @@
 # CBProgressHUD
 
+[![Join the chat at https://gitter.im/cbangchen/CBProgressHUD](https://badges.gitter.im/cbangchen/CBProgressHUD.svg)](https://gitter.im/cbangchen/CBProgressHUD?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > You can Control the HUD with single line code!!! Or two!!ˊ_>ˋ
 
 ![Image_1](https://github.com/cbangchen/CBProgressHUD/blob/master/Resources/CBProgress_1.png)
