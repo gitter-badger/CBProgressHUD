@@ -1,6 +1,6 @@
 # CBProgressHUD
 
-> You can Control the HUD with single code!!! Or two!!ˊ_>ˋ
+> You can Control the HUD with single line code!!! Or two!!ˊ_>ˋ
 
 ![Image_1](https://github.com/cbangchen/CBProgressHUD/blob/master/Resources/CBProgress_1.png)
 ![Image_2](https://github.com/cbangchen/CBProgressHUD/blob/master/Resources/CBProgress_2.png)
